@@ -2,5 +2,3 @@ Name: Ashutosh
 Profession: Software
 
 
-Address: Pune
-Compoany : Amdocvs
