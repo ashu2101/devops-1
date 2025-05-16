@@ -1,0 +1,46 @@
+----------------------
+main: 
+one.txt - 1 
+	First
+------------------------
+bug-1:
+one.txt - 1
+	First
+one.txt - 2
+	First 
+	Bug fixes
+second.txt - 3
+	second
+
+### Merge: from bug-1 branch to Main Branch
+main:
+one.txt - 2
+	First 
+	Bug fixes
+second.txt - 3
+	second
+
+
+-------------------------------
+feature:
+one.txt - 2
+	First 
+	Bug fixes
+
+
+one.txt - 10
+	First + Second
+	Bug fixes
+third.txt
+	third
+
+
+### Merge: from feature branch to Main Branch
+main:
+one.txt - 2
+	First + Second
+	Bug fixes
+second.txt - 3
+	second
+third.txt - 10
+	third
