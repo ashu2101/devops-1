@@ -1,0 +1,44 @@
+<!-- Save this as index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Echo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+    <h1 class="text-2xl font-bold text-gray-800 mb-4">Echo Your Text</h1>
+    
+    <div class="mb-4">
+      <input 
+        type="text" 
+        id="textInput" 
+        placeholder="Type something..." 
+        class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+    
+    <button 
+      onclick="showText()" 
+      class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition"
+    >
+      Submit
+    </button>
+
+    <div id="output" class="mt-6 text-lg text-gray-700 font-medium"></div>
+  </div>
+
+  <script>
+    function showText() {
+      const input = document.getElementById("textInput").value;
+      document.getElementById("output").textContent = input
+        ? `You entered: ${input}`
+        : "Please enter some text!";
+    }
+  </script>
+</body>
+</html>
+
