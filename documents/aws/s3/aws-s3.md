@@ -221,5 +221,3 @@ aws s3 ls s3://mybucket --recursive
 ## 📚 Summary
 
 Amazon S3 is a foundational service for storing and managing unstructured data at scale. With features like flexible storage classes, powerful access controls, automated lifecycle management, and easy integration with other AWS services, S3 is suitable for use cases ranging from simple backups to enterprise-grade data lakes and application hosting.
-
-Would you like to add **Terraform or CloudFormation** examples for provisioning S3 buckets?
