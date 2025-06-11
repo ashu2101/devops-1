@@ -84,7 +84,14 @@ Once configured:
    ```bash
    pkill yes
    ```
-3. Wait a few minutes and check CloudWatch.
-4. You should receive an email when the threshold is breached.
+
+ OR
+
+    ```bash
+    stress --cpu 1 --timeout 60
+    ```
+
+4. Wait a few minutes and check CloudWatch.
+5. You should receive an email when the threshold is breached.
 
 ---
