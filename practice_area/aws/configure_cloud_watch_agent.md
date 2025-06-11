@@ -53,6 +53,7 @@ This guide includes both installation and manual configuration steps.
 
 ```bash
 sudo yum install -y amazon-cloudwatch-agent
+sudo yum install -y collectd
 ```
 
 ### On Ubuntu/Debian:
