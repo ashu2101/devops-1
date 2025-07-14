@@ -1,0 +1,7 @@
+---
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-example-bucket-1234567890 # Replace with your desired bucket name
+      AccessControl: PublicRead # Example: Set access control to PublicRead

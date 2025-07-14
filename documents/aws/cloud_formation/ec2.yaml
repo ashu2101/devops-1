@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0c55b14879e66e3e3 # Replace with a valid AMI ID for your region
+      InstanceType: t2.micro
+      SubnetId: subnet-0123456789abcdef0 # Replace with a valid subnet ID
+      SecurityGroupIds:
+        - sg-0123456789abcdef0 # Replace with a valid security group ID
+      KeyName: my-key-pair # Replace with your key pair name
+      Tags:
+        - Key: Name
+          Value: MyEC2Instance

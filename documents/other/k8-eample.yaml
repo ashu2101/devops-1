@@ -1,0 +1,53 @@
+name: Kubescape Security Scan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "k8s-manifests/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "k8s-manifests/**"
+
+jobs:
+  kubescape-scan:
+    name: Run Kubescape Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Kubescape CLI
+        run: |
+          curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh | /bin/bash
+          echo "Kubescape version:"
+          kubescape version
+
+      - name: Run NSA framework scan on manifests
+        run: |
+          mkdir -p scan-results
+          kubescape scan framework nsa --files k8s-manifests/ \
+            --format json --output scan-results/kubescape-nsa.json
+
+      - name: Run API deprecation check (K8s Upgrade Readiness)
+        run: |
+          kubescape scan control KSV010 --files k8s-manifests/ \
+            --format json --output scan-results/kubescape-api-check.json
+
+      - name: Upload Scan Results as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: kubescape-results
+          path: scan-results/
+
+      - name: Fail build if critical issues found (optional)
+        run: |
+          CRITICALS=$(jq '.[0].summary.critical' scan-results/kubescape-nsa.json)
+          if [ "$CRITICALS" -gt 0 ]; then
+            echo "❌ Kubescape found $CRITICALS critical issues!"
+            exit 1
+          else
+            echo "✅ No critical issues found!"
+          fi

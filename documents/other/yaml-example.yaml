@@ -1,0 +1,39 @@
+# you can use comments in YAML. COmments start with a hash (#)
+# Whitespace is significant in YAML. Standard indentation is 2 spaces.
+# YAML is a superset of JSON, meaning that any valid JSON is also valid YAML.
+# - This is a list item
+
+- name: Super Man
+  lastName: P
+  age: 30
+  accountBalance: -1000.5
+  isEmployed: null
+  skills:
+    - JavaScript
+    - Python
+    - DevOps
+  address:
+    street: ABC Street
+    city: Pune
+    state: Maharashtra
+    zipCode: "411011"
+- name: Suresh
+  lastName: Kumar
+  age: 19
+  accountBalance: 38000.5
+  isEmployed: false
+  skills:
+    - Sales
+    - Marketing
+  address:
+    street: 123 Main St
+    city: Bangalore
+    state: Karnataka
+    zipCode: "560001"
+
+---
+configurations:
+  - name: Ingress
+    value: data/input
+  - name: Egress
+    value: data/output

@@ -1,0 +1,13 @@
+<Configurations>
+
+   <Config>
+     <Name>Ingress</Name>
+     <Value>data/input</Value>
+   </Config>  
+
+   <Config>
+     <Name>Egress</Name>
+     <Value>data/output</Value>
+   </Config>
+
+</Configurations>

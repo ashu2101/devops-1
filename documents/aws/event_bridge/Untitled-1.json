@@ -1,0 +1,14 @@
+{
+  "version": "0",
+  "id": "6de7efdb-5290-7a10-26a6-747251f5d580",
+  "detail-type": "paymentMethod",
+  "source": "abc.com",
+  "account": "118497224894",
+  "time": "2025-07-02T14:34:30Z",
+  "region": "ap-south-1",
+  "resources": [],
+  "detail": {
+    "orderId": 98225,
+    "price": 1000
+  }
+}

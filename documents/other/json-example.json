@@ -1,0 +1,50 @@
+[
+    {
+        "name": "SuperMan",
+        "lastName": "P",
+        "age": 30,
+        "accountBalance": -1000.50,
+        "isEmployed": null,
+        "skills": [
+            "JavaScript",
+            "Python",
+            "DevOps"
+        ],
+        "address": {
+            "street": "ABC Street",
+            "city": "Pune",
+            "state": "Maharashtra",
+            "zipCode": "411011"
+        }
+    },
+    {
+        "name": "Suresh",
+        "lastName": "Kumar",
+        "age": 19,
+        "accountBalance": 38000.50,
+        "isEmployed": false,
+        "skills": [
+            "Sales",
+            "Marketing"
+        ],
+        "address": {
+            "street": "123 Main St",
+            "city": "Bangalore",
+            "state": "Karnataka",
+            "zipCode": "560001"
+        }
+    }
+]
+
+{
+    "configurations": [
+        {
+            "name": "Ingress",
+            "value": "data/input"
+        },
+        {
+            "name": "Egress",
+            "value": "data/output"
+        }
+    ]
+}
