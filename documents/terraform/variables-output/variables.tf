@@ -1,7 +1,7 @@
 variable "amazon_ec2_ami_id" {
   description = "This virable will be used to specify the Amazon EC2 AMI ID for the instance."
   type        = string
-  #   default     = "ami-0a1235697f4afa8a4" # Example AMI ID, replace with a valid one
+  default     = "ami-0a1235697f4afa8a4" # Example AMI ID, replace with a valid one
 }
 
 variable "ec2_instance_type" {
@@ -9,9 +9,14 @@ variable "ec2_instance_type" {
   default = "t2.micro" # Free tier eligible instance type
 }
 
-variable "no_of_instances" {
-  type    = number
-  default = 2
+variable "env" {
+  type    = string
+  default = "dev"
+}
+
+locals {
+  instance_name = "my_${var.env}_machine"
+  count         = 2
 }
 
 
